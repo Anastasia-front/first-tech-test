@@ -76,6 +76,15 @@ const Items = () => {
     fetchData();
   };
 
+  const noText = () => {
+    if (statusFilter === 'follow') {
+      return 'There are no users you are not following!';
+    }
+    if (statusFilter === 'followings') {
+      return 'There are no users you are following!';
+    }
+  };
+
   return (
     <List>
       <Center>
@@ -86,7 +95,7 @@ const Items = () => {
                   <Tweet fields={obj} />
                 </Li>
               ))
-            : !isGeneralLoading && <End>There are no tweets in mockapi!</End>}
+            : !isGeneralLoading && <End>{noText()}</End>}
         </Tweets>
       </Center>
 

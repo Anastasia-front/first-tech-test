@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SpaceBetween = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 100px;
   @media screen and (min-width: 980px) {
     padding: 20px 100px 0;
   }
