@@ -7,9 +7,10 @@ export const Dropdown = styled.button`
   color: ${props => (props.condition ? '#000' : '#fff')};
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
+  width: 169px;
   display: inline-block;
 
-  padding: 14px 28px;
+  padding: 14px 22px;
   gap: 6px;
   font-family: 'Montserrat, sans-serif';
   font-style: normal;
@@ -33,11 +34,12 @@ export const List = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 60px;
+  top: 80px;
   right: 0px;
   padding: 0 10px;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
+  width: 150px;
 `;
 export const Button = styled.button`
   color: #fff;

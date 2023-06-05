@@ -8,6 +8,7 @@ import { Dropdown, List, Button } from './Filter.styled';
 const Filter = () => {
   const dispatch = useDispatch();
   const [close, setClose] = useState(true);
+  const [filterText, setFilterText] = useState('FILTERS');
   const filter = useSelector(selectStatusFilter);
 
   const dropdownRef = useRef(null);
@@ -23,6 +24,7 @@ const Filter = () => {
 
   const handleFilterChange = filter => {
     dispatch(setStatusFilter(filter));
+    setFilterText(`FILTER - ${filter}`);
   };
 
   useEffect(() => {
@@ -48,7 +50,7 @@ const Filter = () => {
     <div style={{ position: 'relative' }}>
       {close ? (
         <Dropdown condition={!close} onClick={handleDropdownOpen}>
-          FILTERS
+          {filterText}
         </Dropdown>
       ) : (
         <>
@@ -57,7 +59,7 @@ const Filter = () => {
             onClick={handleDropdownClose}
             ref={dropdownRef}
           >
-            FILTERS
+            {filterText}
           </Dropdown>
           <List ref={listRef}>
             <Button
