@@ -8,7 +8,6 @@ import { Dropdown, List, Button } from './Filter.styled';
 const Filter = () => {
   const dispatch = useDispatch();
   const [close, setClose] = useState(true);
-  const [select, setSelect] = useState(false);
   const filter = useSelector(selectStatusFilter);
 
   const handleDropdown = () => {
@@ -16,7 +15,6 @@ const Filter = () => {
   };
   const handleFilterChange = filter => {
     dispatch(setStatusFilter(filter));
-    setSelect(true);
   };
 
   return (
@@ -32,21 +30,18 @@ const Filter = () => {
           </Dropdown>
           <List>
             <Button
-              condition={select}
               selected={filter === statusFilters.all}
               onClick={() => handleFilterChange(statusFilters.all)}
             >
               SHOW ALL
             </Button>
             <Button
-              condition={select}
               selected={filter === statusFilters.active}
               onClick={() => handleFilterChange(statusFilters.active)}
             >
               FOLLOWINGS
             </Button>
             <Button
-              condition={select}
               selected={filter === statusFilters.completed}
               onClick={() => handleFilterChange(statusFilters.unActive)}
             >

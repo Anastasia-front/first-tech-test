@@ -34,8 +34,6 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  // Укажите, какие части состояния должны быть сохранены
-  // whitelist: ['buttonState', 'followerCount']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

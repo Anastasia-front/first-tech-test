@@ -76,7 +76,7 @@ export const Footer = styled.footer`
   flex-shrink: 0;
   border-top: 1px solid black;
   box-shadow: 30px 10px 80px rgb(187, 187, 187);
-
+  margin-top: auto;
   background-color: rgb(244, 232, 255);
   padding: 12px 30px;
 `;

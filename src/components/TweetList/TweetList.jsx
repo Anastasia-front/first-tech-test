@@ -33,6 +33,7 @@ const Items = () => {
   const isGeneralLoading = useSelector(selectIsLoading);
   const [load, setLoad] = useState(false);
   const [page, setPage] = useState(2);
+  const [end, setEnd] = useState(false);
 
   const uniqueItems = tweets.filter((item, index, self) => {
     return self.findIndex(i => i.id === item.id) === index;
@@ -57,23 +58,24 @@ const Items = () => {
 
   const handleLoading = () => {
     setLoad(true);
+    async function fetchData() {
+      try {
+        const totalCount = await totalCountTweets;
+        if (
+          totalCount === visibleTweets.length ||
+          totalCount === visibleTweets.length - 1 ||
+          totalCount === visibleTweets.length - 2
+        ) {
+          setEnd(true);
+          return true;
+        }
+      } catch (error) {
+        console.error('Error fetching total tweets count:', error);
+      }
+    }
+    fetchData();
   };
 
-  async function fetchData() {
-    try {
-      const totalCount = await totalCountTweets;
-      if (
-        totalCount === uniqueItems.length ||
-        totalCount === uniqueItems.length - 1 ||
-        totalCount === uniqueItems.length - 2
-      ) {
-        return true;
-      }
-    } catch (error) {
-      console.error('Error fetching total tweets count:', error);
-    }
-  }
-  const reachTheEnd = fetchData();
   return (
     <List>
       <Center>
@@ -84,11 +86,11 @@ const Items = () => {
                   <Tweet fields={obj} />
                 </Li>
               ))
-            : !isGeneralLoading && <h3>There are no tweets in mockapi</h3>}
+            : !isGeneralLoading && <End>There are no tweets in mockapi!</End>}
         </Tweets>
       </Center>
 
-      {reachTheEnd ? (
+      {end ? (
         <End>It's all twits!</End>
       ) : (
         <Load>
@@ -96,7 +98,7 @@ const Items = () => {
             <Button onClick={handleLoading} />
           ) : (
             <LoaderRing />
-          )}{' '}
+          )}
         </Load>
       )}
       {error && <p>Something went wrong...</p>}

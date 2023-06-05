@@ -41,13 +41,13 @@ export const List = styled.div`
   border-radius: 10.3108px;
 `;
 export const Button = styled.button`
-  color: ${props => (props.condition ? '#fff' : '#000')};
+  color: #fff;
   background-color: rgb(159 137 209);
   border-style: none;
   text-transform: uppercase;
   padding: 10px;
   :hover,
   :focus {
-    text-decoration: underline;
+    color: #000;
   }
 `;
