@@ -23,8 +23,8 @@ export const Dropdown = styled.button`
   border-radius: 10.3108px;
 
   :hover {
-    background-color: #ebd8ff;
-    color: #000;
+    background-color: rgb(117 88 185);
+    color: #fff;
   }
 `;
 

@@ -16,9 +16,9 @@ export const Title = styled.h1`
     45deg,
     violet,
     indigo,
-    blue,
+    rgb(75, 42, 153),
     darkblue,
-    blue,
+    rgb(75, 42, 153),
     indigo,
     violet
   );

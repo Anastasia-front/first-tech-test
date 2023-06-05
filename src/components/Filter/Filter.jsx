@@ -16,7 +16,8 @@ const Filter = () => {
   const handleDropdownOpen = () => {
     setClose(false);
   };
-  const handleDropdownClose = () => {
+  const handleDropdownClose = event => {
+    event.stopPropagation();
     setClose(true);
   };
 

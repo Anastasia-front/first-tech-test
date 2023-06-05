@@ -90,7 +90,7 @@ const Items = () => {
         </Tweets>
       </Center>
 
-      {end ? (
+      {end && visibleTweets.length ? (
         <End>It's all twits!</End>
       ) : (
         <Load>
@@ -101,7 +101,7 @@ const Items = () => {
           )}
         </Load>
       )}
-      {error && <p>Something went wrong...</p>}
+      {error && <End>Something went wrong...</End>}
     </List>
   );
 };
