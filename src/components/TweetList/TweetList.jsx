@@ -89,7 +89,7 @@ const Items = () => {
     <List>
       <Center>
         <Tweets>
-          {visibleTweets.length && !end
+          {visibleTweets.length
             ? visibleTweets.map(obj => (
                 <Li key={obj.id}>
                   <Tweet fields={obj} />
@@ -99,9 +99,7 @@ const Items = () => {
         </Tweets>
       </Center>
 
-      {end &&
-      visibleTweets.length &&
-      (statusFilter === 'follow' || statusFilter === 'followings') ? (
+      {end && visibleTweets.length ? (
         <End>It's all twits!</End>
       ) : (
         <Load>
