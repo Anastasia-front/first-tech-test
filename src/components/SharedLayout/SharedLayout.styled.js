@@ -8,6 +8,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.header`
+  width: 100vw;
+
   border-bottom: 1px solid black;
   box-shadow: 30px 10px 80px rgb(187, 187, 187);
   margin-bottom: 40px;
@@ -72,6 +74,8 @@ export const Icon = styled.span`
 `;
 
 export const Footer = styled.footer`
+  width: 100vw;
+
   flex-shrink: 0;
   border-top: 1px solid black;
   box-shadow: 30px 10px 80px rgb(187, 187, 187);
