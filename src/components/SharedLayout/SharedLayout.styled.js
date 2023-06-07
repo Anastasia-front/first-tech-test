@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.header`
-  width: 100%;
   border-bottom: 1px solid black;
   box-shadow: 30px 10px 80px rgb(187, 187, 187);
   margin-bottom: 40px;
@@ -81,7 +80,6 @@ export const Footer = styled.footer`
   padding: 12px 30px;
 `;
 export const FooterContainer = styled.div`
-  max-width: 9000px;
   display: flex;
   flex-direction: column;
   align-items: center;

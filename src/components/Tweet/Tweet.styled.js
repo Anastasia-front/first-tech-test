@@ -87,6 +87,7 @@ export const Text = styled.div`
   }
 `;
 export const Button = styled.button`
+  color: '#000';
   position: absolute;
   left: ${props => (props.condition ? '130px' : '110px')};
   top: 374px;

@@ -27,6 +27,9 @@ export const Dropdown = styled.button`
     background-color: rgb(117 88 185);
     color: #fff;
   }
+  :focus {
+    outline: none;
+  }
 `;
 
 export const List = styled.div`
